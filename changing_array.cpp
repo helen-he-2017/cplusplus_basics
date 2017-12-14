@@ -3,16 +3,16 @@
 using namespace std;
 
 class CArray{
-    int size; //ÔªËØ¸öÊı
-    int *ptr; //Ö¸ÏòÊı×é
+    int size; //å…ƒç´ ä¸ªæ•°
+    int *ptr; //æŒ‡å‘æ•°ç»„
 public:
     CArray(int s = 0);
     CArray(CArray & a);
     ~CArray();
-    void push_back(int v); //Î²²¿Ìí¼ÓÒ»¸öÔªËØ
-    CArray & operator = (const CArray & a); //Éî¿½±´
+    void push_back(int v); //å°¾éƒ¨æ·»åŠ ä¸€ä¸ªå…ƒç´ 
+    CArray & operator = (const CArray & a); //æ·±æ‹·è´
     int length(){return size;}
-    int & CArray::operator[](int i) //²»ÄÜÓÃint
+    int & CArray::operator[](int i) //ä¸èƒ½ç”¨int
     {
         return ptr[i];
     };
@@ -24,15 +24,15 @@ int main()
     for (int i = 0;i<5;++i)
         a.push_back(i);
     CArray a2, a3;
-    a2 = a; //ÖØÔØ=
+    a2 = a; //é‡è½½=
     for (int i = 0; i<a.length();++i)
-        cout << a2[i] << " "; //ÖØÔØ¡¾¡¿
+        cout << a2[i] << " "; //é‡è½½ã€ã€‘
     a2 = a3;
     for (int i = 0, n < a2.length();++i)
         cout < a2[i] << " ";
     cout << endl;
     a[3] = 100;
-    CArray a4(a); //¸´ÖÆº¯Êı
+    CArray a4(a); //å¤åˆ¶å‡½æ•°
     for (int i = 0; i<a4.length(),++i)
         cout << a4[i] << " ";
     return 0;
